@@ -1,0 +1,17 @@
+[build]
+  base = "frontend"
+  command = "npm run build"
+  publish = "dist"
+
+# Route API requests to your deployed backend (e.g. Render / Railway / Heroku)
+# Replace the URL below with your actual backend URL after deploying backend
+[[redirects]]
+  from = "/api/*"
+  to = "https://your-taskflow-backend.onrender.com/api/:splat"
+  status = 200
+
+# React Router SPA Client-Side Fallback
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
